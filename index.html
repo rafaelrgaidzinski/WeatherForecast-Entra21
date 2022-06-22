@@ -17,7 +17,7 @@
             height: 100%;
             margin: 0;
             display: grid;
-            grid-template-columns: 3fr 6fr 175px;
+            grid-template-columns: 4fr 4fr 175px;
             grid-template-rows: 1fr;
         }
 
@@ -27,7 +27,7 @@
             background-color: #ffffff;
             display: grid;
             grid-template-columns: 1;    
-            grid-template-rows: 80px 1fr;
+            grid-template-rows: 1fr;
         }
 
         #idWeatherPrediction {
@@ -52,20 +52,29 @@
         #idWeekday {
             grid-template-columns: 1;
             grid-template-rows: 1fr 1fr;
-            margin: 0 auto;
+            width: 100%;
+            margin: auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
         }
 
         #idWeekday h3 {
-            margin: auto auto;
-            margin-left: 15%;
+            width: fit-content;
+            margin: auto;
             grid-row: 1;
             grid-column: 1;
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: -5px;
         }
 
         #idWeekday h2 {
-            margin: auto auto;
+            width: fit-content;
+            margin: auto;
             grid-row: 2;
             grid-column: 1;
+            font-weight: 500;
+            font-size: 26px;
         }
 
         #idCityName {
@@ -79,17 +88,22 @@
             color: #ffffff;    
         }
 
+        #idBrazilMap {
+            margin: auto;
+            height: 90%;
+        }
+
     </style>
 </head>
 <body>
 
     <section id="idCapitalsWeather">
-        
+        <img id="idBrazilMap" src="images/mapa-do-brasil.jpg" alt="Mapa do Brasil">
     </section>
 
     <section id="idWeatherPrediction">
         
-        <h1 id="idCityName">Criciúma,SC</h1>
+        <h1 id="idCityName">Criciúma, SC</h1>
        
     </section>
 
