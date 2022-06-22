@@ -118,36 +118,48 @@
 
     <script>
 
-        var capitals = [{cidade: "Porto Alegre", woeid: 455823}, {cidade: "Florianópolis", woeid: 90200648}, {cidade: "Curitiba", woeid: 455822},
-                        {cidade: "São Paulo", woeid: 455827}, {cidade: "Campo Grande", woeid: 26804347}, {cidade: "Rio de Janeiro", woeid: 455825},
-                        {cidade: "Vitória", woeid: 455922}, {cidade: "Belo Horizonte", woeid: 455821}, {cidade: "Goiânia", woeid: 455831},
-                        {cidade: "Brasília", woeid: 455819}, {cidade: "Cuiabá", woeid: 455829}];
+        var cities = [{cidade: "Criciúma", woeid: 455856}, {cidade: "Florianópolis", woeid: 90200648}, {cidade: "Blumenau", woeid: 455846},
+                        {cidade: "Joinville", woeid: 455873}, {cidade: "Chapecó", woeid: 455854}, {cidade: "Lages", woeid: 455877},
+                        {cidade: "Imbituba", woeid: 456233}, {cidade: "Caçador", woeid: 456892}, {cidade: "São Miguel do Oeste", woeid: 450959}];
+        var citiesWeather = [];
+        var userLocationWeather;
+        var key = "cafdeb59";
 
-        var key = "6cb8313e";
+        document.addEventListener("DOMContentLoaded", function(){
+            getUserGeolocation();
+            getCitiesWeather();
+        });
 
-        document.addEventListener("DOMContentLoaded", getWeatherByLocation);
-
-        async function getGeolocation() {
+        async function getUserGeolocation() {
 
             var response = await fetch('https://api.hgbrasil.com/geoip?key='+ key +'&format=json-cors&address=remote&precision=false&fields=only_results,address,city,region,country_name,woeid')
             
+            response = await response.json();
+            
+            userLocationWeather = await getWeatherByLocation(response.woeid);
+        }
+
+        async function getWeatherByLocation(woeid) {
+
+            var response = await fetch('https://api.hgbrasil.com/weather?key='+ key +'&format=json-cors&woeid=' + woeid);
+
             response = await response.json();
 
             return response;
         }
 
-        async function getWeatherByLocation() {
+        async function getCitiesWeather() {
 
-            var location = await getGeolocation();
+            for (let index = 0; index < cities.length; index++) {
+                
+                var cityWeather = await getWeatherByLocation(cities[index].woeid);
 
-            var response = await fetch('https://api.hgbrasil.com/weather?key='+ key +'&format=json-cors&woeid=' + location.woeid);
+                citiesWeather.push(cityWeather);
+            }
 
-            response = await response.json();
-
-            console.log(response);
+            console.log(citiesWeather);
+            console.log(userLocationWeather);
         }
-
-        
 
     </script>
     
