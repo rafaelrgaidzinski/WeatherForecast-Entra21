@@ -115,6 +115,41 @@
         </div>
         
     </section>
+
+    <script>
+
+        var capitals = [{cidade: "Porto Alegre", woeid: 455823}, {cidade: "Florianópolis", woeid: 90200648}, {cidade: "Curitiba", woeid: 455822},
+                        {cidade: "São Paulo", woeid: 455827}, {cidade: "Campo Grande", woeid: 26804347}, {cidade: "Rio de Janeiro", woeid: 455825},
+                        {cidade: "Vitória", woeid: 455922}, {cidade: "Belo Horizonte", woeid: 455821}, {cidade: "Goiânia", woeid: 455831},
+                        {cidade: "Brasília", woeid: 455819}, {cidade: "Cuiabá", woeid: 455829}];
+
+        var key = "6cb8313e";
+
+        document.addEventListener("DOMContentLoaded", getWeatherByLocation);
+
+        async function getGeolocation() {
+
+            var response = await fetch('https://api.hgbrasil.com/geoip?key='+ key +'&format=json-cors&address=remote&precision=false&fields=only_results,address,city,region,country_name,woeid')
+            
+            response = await response.json();
+
+            return response;
+        }
+
+        async function getWeatherByLocation() {
+
+            var location = await getGeolocation();
+
+            var response = await fetch('https://api.hgbrasil.com/weather?key='+ key +'&format=json-cors&woeid=' + location.woeid);
+
+            response = await response.json();
+
+            console.log(response);
+        }
+
+        
+
+    </script>
     
 </body>
 </html>
