@@ -17,23 +17,24 @@
             height: 100%;
             margin: 0;
             display: grid;
-            grid-template-columns: 4fr 4fr 175px;
+            grid-template-columns: 3fr 5fr 175px;
             grid-template-rows: 1fr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        #idCapitalsWeather {
+        #idCitiesWeather {
             grid-column: 1;
             grid-row: 1;
             background-color: #ffffff;
             display: grid;
-            grid-template-columns: 1;    
-            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;    
+            grid-template-rows: 80px 1fr;
         }
 
         #idWeatherPrediction {
             grid-column: 2;
             grid-row: 1;
-            background-color: #252e35;
+            background-color: #29b7f3;
             display: grid;
             grid-template-columns: 1;    
             grid-template-rows: 80px 1fr;
@@ -42,37 +43,35 @@
         #idWeekdaysWeather {
             grid-column: 3;
             grid-row: 1;
-            background-color: #151a1d;
+            background-color: #286b96;
             display: grid;
-            grid-template-columns: 1;    
+            grid-template-columns: 1fr;    
             grid-template-rows: 80px 1fr;
-            
         }
 
         #idWeekday {
-            grid-template-columns: 1;
+            grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
             width: 100%;
             margin: auto;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
         }
 
         #idWeekday h3 {
+            grid-column: 1;
+            grid-row: 1;
             width: fit-content;
             margin: auto;
-            grid-row: 1;
-            grid-column: 1;
             font-weight: 300;
             font-size: 18px;
             margin-bottom: -5px;
         }
 
         #idWeekday h2 {
+            grid-column: 1;
+            grid-row: 2;
             width: fit-content;
             margin: auto;
-            grid-row: 2;
-            grid-column: 1;
             font-weight: 500;
             font-size: 26px;
         }
@@ -80,30 +79,216 @@
         #idCityName {
             grid-column: 1;
             grid-row: 1;
-            align-self: flex-end;
-            margin: 0 0 0 75px;
+            margin: auto;
             font-size: 48px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 700;
             color: #ffffff;    
         }
 
-        #idBrazilMap {
-            margin: auto;
-            height: 90%;
+        #idDayWeather {
+            background-color: #3083b6;
+            width: 100%;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px auto;
+        }
+
+        #idUpdateTime {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            align-self: flex-end;
+            margin: 0;
+            margin-left: 50px;
+            color: #c4c4c4;
+            font-size: 12px;
+        }
+
+        #idInfoWeather {
+            grid-column: 1;
+            grid-row: 2;
+            width: 100%;
+            height: fit-content;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, auto);
+        }
+
+        #idTemperature {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            font-size: 10em;
+            margin-left: 35px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        #idWheaterImage {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            display: flex;
+            justify-self: flex-start;
+            align-self: center;
+            margin: 0;
+            width: 150px;
+        }
+
+        #idHumidity {
+            grid-column: 3;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-self: flex-start;
+            align-self: flex-end;
+        }
+
+        #idHumidity img {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            width: 2em;
+            display: flex;
+            justify-self: flex-end;
+            align-self: center;
+            margin-right: 5px;
+        }
+
+        #idHumidity h5 {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-end;
+            margin: 0;
+            color: #c4d3dc;
+        }
+
+        #idHumidity p {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-start;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        #idWind {
+            grid-column: 3;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-self: flex-start;
+            align-self: flex-start;
+            margin-top: 10px;
+        }
+
+        #idWind img {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            width: 2em;
+            display: flex;
+            justify-self: flex-end;
+            align-self: center;
+            margin: 0;
+            margin-right: 5px;
+        }
+
+        #idWind h5 {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-end;
+            margin: 0;
+            color: #c4d3dc;
+        }
+
+        #idWind p {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-start;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .clNextDay {
+            padding: 5% 10%;
+            height: fit-content;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 50px 50px 1fr;
+        }
+
+        .clNextDay:nth-child(even) {
+            background-color: #3083b6;
+        }
+
+        .clNextDay:nth-child(odd) {
+            background-color: #29b7f3;
+        }
+
+        .clNextDay h3 {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            justify-self: center;
+            align-self: flex-end;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .clNextDay h2 {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            justify-self: center;
+            align-self: flex-start;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .clNextDay h1 {
+            grid-column: 1;
+            grid-row: 3;
+            display: flex;
+            justify-self: center;
+            align-self: flex-start;
+            margin: 0;
+            margin-bottom: 30px;
+            font-size: 3.8em;
+            color: #ffffff;
+        }
+
+        .clWheaterImage {
+            grid-column: 2;
+            grid-row: 1 / span 3;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            height: 10em;
+            margin: 0;
         }
 
     </style>
 </head>
 <body>
 
-    <section id="idCapitalsWeather">
-        <img id="idBrazilMap" src="images/mapa-do-brasil.jpg" alt="Mapa do Brasil">
+    <section id="idCitiesWeather">
+        
     </section>
 
     <section id="idWeatherPrediction">
-        
-        <h1 id="idCityName">Criciúma, SC</h1>
        
     </section>
 
@@ -123,7 +308,9 @@
                         {cidade: "Imbituba", woeid: 456233}, {cidade: "Caçador", woeid: 456892}, {cidade: "São Miguel do Oeste", woeid: 450959}];
         var citiesWeather = [];
         var userLocationWeather;
-        var key = "cafdeb59";
+        var key = "3e360e1f";
+
+        var mainWeatherPanel = document.getElementById("idWeatherPrediction");
 
         document.addEventListener("DOMContentLoaded", function(){
             getUserGeolocation();
@@ -137,15 +324,9 @@
             response = await response.json();
             
             userLocationWeather = await getWeatherByLocation(response.woeid);
-        }
 
-        async function getWeatherByLocation(woeid) {
-
-            var response = await fetch('https://api.hgbrasil.com/weather?key='+ key +'&format=json-cors&woeid=' + woeid);
-
-            response = await response.json();
-
-            return response;
+            buildDayWeatherPanel(userLocationWeather);
+            buildNextDaysWeatherPanel(userLocationWeather);
         }
 
         async function getCitiesWeather() {
@@ -159,6 +340,186 @@
 
             console.log(citiesWeather);
             console.log(userLocationWeather);
+        }
+
+        async function getWeatherByLocation(woeid) {
+
+            var response = await fetch('https://api.hgbrasil.com/weather?key='+ key +'&format=json-cors&woeid=' + woeid);
+
+            response = await response.json();
+
+            return response;
+        }
+
+        function buildDayWeatherPanel(object) {
+
+            var cityName = document.createElement('h1');
+            cityName.id = "idCityName";
+            cityName.innerHTML = object.results.city;
+
+            var dayWeather = document.createElement('div');
+            dayWeather.id = "idDayWeather";
+
+            var mainInfo = document.createElement('div');
+            mainInfo.id = "idInfoWeather";
+
+            var update = document.createElement('p');
+            update.id = "idUpdateTime"
+            update.innerHTML = "Atualizado às " + object.results.time;
+
+            var temperature = document.createElement('h1');
+            temperature.id = "idTemperature";
+            temperature.innerHTML = object.results.temp + "º";
+
+            var imgWeatherCondition = getWeatherImage(object.results.condition_slug);
+
+            var secondaryInfo = ["umidade", "vento"];
+
+            secondaryInfo.forEach(element => {
+                var info = document.createElement('div');
+
+                if (element == "umidade") {
+                    info.id = "idHumidity";
+
+                    var imgHumidity = document.createElement('img');
+                    imgHumidity.src = "images/humidade.svg";
+                    imgHumidity.alt = "Imagem de gotas que representam a humidade do dia";
+
+                    var title = document.createElement("h5");
+                    title.innerHTML = "Umidade";
+
+                    var condition = document.createElement("p");
+                    condition.innerHTML = object.results.humidity + "%";
+
+                    info.appendChild(imgHumidity);
+                    info.appendChild(title);
+                    info.appendChild(condition);
+                    
+                } else {
+                    info.id = "idWind";
+
+                    var imgWind = document.createElement('img');
+                    imgWind.src = "images/vento.svg";
+                    imgWind.alt = "Imagem de vento que representa a velocidade do vento no dia";
+
+                    var title = document.createElement("h5");
+                    title.innerHTML = "Ventos";
+
+                    var condition = document.createElement("p");
+                    condition.innerHTML = object.results.wind_speedy;
+
+                    info.appendChild(imgWind);
+                    info.appendChild(title);
+                    info.appendChild(condition);
+                }
+
+                mainInfo.appendChild(info);
+
+            });
+
+            mainInfo.appendChild(temperature);
+            mainInfo.appendChild(imgWeatherCondition);
+            
+            dayWeather.appendChild(update);
+            dayWeather.appendChild(mainInfo);
+            
+            mainWeatherPanel.appendChild(cityName);
+            mainWeatherPanel.appendChild(dayWeather);
+
+        }
+
+        function buildNextDaysWeatherPanel(object) {
+
+            var nextDaysForecast = object.results.forecast
+            console.log(nextDaysForecast);
+
+            nextDaysForecast.forEach(element => {
+
+                var nextDay = document.createElement('div');
+                nextDay.className = "clNextDay";
+
+                var title = document.createElement('h3');
+                title.innerHTML = "Previsão do tempo para";
+
+                var day = document.createElement('h2');
+                day.innerHTML = getWeekday(element.weekday) + ", " + element.date;
+
+                var minMax = document.createElement('h1');
+                minMax.innerHTML = element.max + "º " + element.min + "º";
+
+                var imgWeatherCondition = getWeatherImage(element.condition, 1);
+
+                nextDay.appendChild(title);
+                nextDay.appendChild(day);
+                nextDay.appendChild(minMax);
+                nextDay.appendChild(imgWeatherCondition);
+
+                mainWeatherPanel.appendChild(nextDay);
+            });
+           
+
+        }
+
+        function getWeekday(day) {
+
+            if (day == "Seg") {
+                return "Segunda";
+            } else if (day == "Ter") {
+                return "Terça";
+            } else if (day == "Qua") {
+                return "Quarta";
+            } else if (day == "Qui") {
+                return "Quinta";
+            } else if (day == "Sex") {
+                return "Sexta";
+            } else if (day == "Sáb") {
+                return "Sábado";
+            } else if (day == "Dom") {
+                return "Domingo";
+            }
+
+        }
+
+        function getWeatherImage(condition, option) {
+
+            if (option == 1) {
+                var img = document.createElement('img');
+                img.className = "clWheaterImage"
+                img.alt = "Imagem da condição climática do dia selecionado";
+            } else {
+                var img = document.createElement('img');
+                img.id = "idWheaterImage"
+                img.alt = "Imagem da condição climática do dia selecionado";
+            }
+            
+            if (condition == "storm") {
+                img.src = "images/tempestade.png";
+            } else if (condition == "snow") {
+                img.src = "images/neve.png";
+            } else if (condition == "hail") {
+                img.src = "images/granizo.png";
+            } else if (condition == "rain") {
+                img.src = "images/chuva.svg";
+            } else if (condition == "fog") {
+                img.src = "images/neblina.svg";
+            } else if (condition == "clear_day") {
+                img.src = "images/dia-limpo.svg";
+            } else if (condition == "clear_night") {
+                img.src = "images/noite-limpa.svg";
+            } else if (condition == "cloud") {
+                img.src = "images/nublado.svg";
+            } else if (condition == "cloudly_day") {
+                img.src = "images/nublado-dia.svg";
+            } else if (condition == "cloudly_night") {
+                img.src = "images/nublado-noite.svg";
+            } else if (condition == "none_day") {
+                img.src = "images/nublado-dia.svg";
+            } else if (condition == "none_night") {
+                img.src = "images/nublado-noite.svg";
+            }
+
+            return img;
+
         }
 
     </script>
