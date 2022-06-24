@@ -17,78 +17,143 @@
             height: 100%;
             margin: 0;
             display: grid;
-            grid-template-columns: 3fr 5fr 175px;
+            grid-template-columns: 40% 50% 10%;
             grid-template-rows: 1fr;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #idCitiesWeather {
+            position: fixed;
+            width: 40%;
             grid-column: 1;
             grid-row: 1;
             background-color: #ffffff;
             display: grid;
             grid-template-columns: 1fr;    
-            grid-template-rows: 80px 1fr;
+            grid-template-rows: 80px auto;
+        }
+
+        #idCitiesSectionTitle {
+            grid-column: 1;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: 1;
+            grid-template-rows: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #26264a;
+        }
+
+        #idCitiesSectionTitle h1 {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        #idCitiesInfo {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .clCityWeather {
+            display:grid;
+            grid-template-columns: repeat(7, auto);
+            grid-template-rows: 1;
+            align-self: center;
+            height: 6em;
+            padding: 0 10px;
+            background-color: #3b5998;
+            color: #ffffff;
+        }
+
+        .clCityWeather h3 {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .clCitiesWeatherImage {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            width: 5em;
+        }
+
+        .clCityWeather img:not(.clCitiesWeatherImage) {
+            display: flex;
+            justify-self: flex-end;
+            align-self: center;
+            width: 2em;
+        }
+
+        .clCityWeather p {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .clCityWeather h2 {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            
         }
 
         #idWeatherPrediction {
             grid-column: 2;
             grid-row: 1;
-            background-color: #29b7f3;
+            background-color: #3083b6;
             display: grid;
             grid-template-columns: 1;    
-            grid-template-rows: 80px 1fr;
+            grid-template-rows: auto;
         }
 
-        #idWeekdaysWeather {
-            grid-column: 3;
-            grid-row: 1;
-            background-color: #286b96;
+        #idCityNameTitle {
+            position: fixed;
+            width: 50%;
+            height: 80px;
+            margin: 0;
             display: grid;
-            grid-template-columns: 1fr;    
-            grid-template-rows: 80px 1fr;
-        }
-
-        #idWeekday {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-            width: 100%;
-            margin: auto;
-            color: #ffffff;
+            grid-template-rows: 1fr;
+            background-color: #3083b6;
         }
 
-        #idWeekday h3 {
-            grid-column: 1;
-            grid-row: 1;
-            width: fit-content;
-            margin: auto;
-            font-weight: 300;
-            font-size: 18px;
-            margin-bottom: -5px;
-        }
-
-        #idWeekday h2 {
-            grid-column: 1;
-            grid-row: 2;
-            width: fit-content;
-            margin: auto;
-            font-weight: 500;
-            font-size: 26px;
-        }
-
-        #idCityName {
-            grid-column: 1;
-            grid-row: 1;
-            margin: auto;
+        #idCityName{
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
             font-size: 48px;
             font-weight: 700;
-            color: #ffffff;    
+            color: #ffffff;        
+        }
+
+        #idSectionDayWeather {
+            grid-column: 1;
+            grid-row: 1;
+            margin-top: 80px;
+            height: fit-content;
         }
 
         #idDayWeather {
-            background-color: #3083b6;
+            background-color: #5bceff;
             width: 100%;
             height: 300px;
+            margin-top: 80px;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 50px auto;
@@ -101,7 +166,7 @@
             align-self: flex-end;
             margin: 0;
             margin-left: 50px;
-            color: #c4c4c4;
+            color: #ffffff;
             font-size: 12px;
         }
 
@@ -135,7 +200,7 @@
             justify-self: flex-start;
             align-self: center;
             margin: 0;
-            width: 150px;
+            width: 12em;
         }
 
         #idHumidity {
@@ -155,7 +220,7 @@
             display: flex;
             justify-self: flex-end;
             align-self: center;
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         #idHumidity h5 {
@@ -165,7 +230,8 @@
             justify-self: flex-start;
             align-self: flex-end;
             margin: 0;
-            color: #c4d3dc;
+            color: #ffffff;
+            font-weight: 700;
         }
 
         #idHumidity p {
@@ -176,6 +242,7 @@
             align-self: flex-start;
             margin: 0;
             color: #ffffff;
+            font-weight: 500;
         }
 
         #idWind {
@@ -197,7 +264,7 @@
             justify-self: flex-end;
             align-self: center;
             margin: 0;
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         #idWind h5 {
@@ -207,7 +274,8 @@
             justify-self: flex-start;
             align-self: flex-end;
             margin: 0;
-            color: #c4d3dc;
+            color: #ffffff;
+            font-weight: 700;
         }
 
         #idWind p {
@@ -218,6 +286,7 @@
             align-self: flex-start;
             margin: 0;
             color: #ffffff;
+            font-weight: 500;
         }
 
         .clNextDay {
@@ -231,7 +300,7 @@
         }
 
         .clNextDay:nth-child(even) {
-            background-color: #3083b6;
+            background-color: #5bceff;
         }
 
         .clNextDay:nth-child(odd) {
@@ -270,7 +339,7 @@
             color: #ffffff;
         }
 
-        .clWheaterImage {
+        .clNextDaysWheaterImage {
             grid-column: 2;
             grid-row: 1 / span 3;
             display: flex;
@@ -280,11 +349,134 @@
             margin: 0;
         }
 
+        #idWeekdaysWeather {
+            grid-column: 3;
+            grid-row: 1;
+            background-color: #3083b6;
+            display: grid;
+            grid-template-columns: 1fr;    
+            grid-template-rows: auto;
+            height: fit-content;
+        }
+
+        #idWeekday {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10%;
+            height: 80px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin: 0;
+            color: #ffffff;
+            background-color: #3083b6;
+        }
+
+        #idWeekday h3 {
+            grid-column: 1;
+            grid-row: 1;
+            width: fit-content;
+            margin: auto;
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+
+        #idWeekday h2 {
+            grid-column: 1;
+            grid-row: 2;
+            width: fit-content;
+            margin: auto;
+            margin-top: -10px;
+            font-weight: 500;
+            font-size: 26px;
+        }
+
+        #idSelectDay {
+            grid-column: 1;
+            grid-row: 1;
+            margin-top: 80px;
+        }
+
+        .clSelectDayWeather {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr auto auto;
+            height: fit-content;
+            padding: 10px;
+        }
+
+        .clSelectDay {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            display: flex;
+            justify-self: center;
+            align-self: flex-end;
+            margin: 0;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .clSelectDate {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            display: flex;
+            justify-self: center;
+            align-self: flex-start;
+            margin: 0;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .clSelectDayWeatherImage {
+            grid-column: 1;
+            grid-row: 3 / span 4;
+            display: flex;
+            justify-self: flex-end;
+            align-self: center;
+            width: 3.5em;
+        }
+
+        .clSelectMin {
+            grid-column: 2;
+            grid-row: 3;
+            display: flex;
+            justify-self: center;
+            align-self: flex-end;
+            margin: 0;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .clSelectMax {
+            grid-column: 2;
+            grid-row: 4;
+            display: flex;
+            justify-self: center;
+            align-self: flex-start;
+            margin: 0;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
     </style>
 </head>
 <body>
 
     <section id="idCitiesWeather">
+
+        <div id="idCitiesSectionTitle">
+            <h1>Previsão do tempo em SC</h1>
+        </div>
+
+        <div id="idCitiesInfo">
+
+        </div>
         
     </section>
 
@@ -298,6 +490,10 @@
             <h3>Dias da</h3>
             <h2>Semana</h2>
         </div>
+
+        <div id="idSelectDay">
+
+        </div>
         
     </section>
 
@@ -308,14 +504,51 @@
                         {cidade: "Imbituba", woeid: 456233}, {cidade: "Caçador", woeid: 456892}, {cidade: "São Miguel do Oeste", woeid: 450959}];
         var citiesWeather = [];
         var userLocationWeather;
-        var key = "3e360e1f";
+        var key = "379ce0a9";
 
         var mainWeatherPanel = document.getElementById("idWeatherPrediction");
+        var citiesInfoPanel = document.getElementById("idCitiesInfo");
+        var selectDayWeather = document.getElementById("idSelectDay");
+
 
         document.addEventListener("DOMContentLoaded", function(){
             getUserGeolocation();
             getCitiesWeather();
         });
+
+        citiesInfoPanel.addEventListener("click", function(event){
+
+            var element = event.target.nodeName;
+
+            if (element === "DIV") {
+                var city = event.target.id;
+            } else {
+                var city = event.target.parentElement.id;
+            }
+            
+            console.log(city);
+
+            citiesWeather.forEach(element => {
+                
+                if (city == element.results.city_name) {
+                    changeForecastWeatherForSelectedCity();
+                    buildDayWeatherPanel(element);
+                    buildNextDaysWeatherPanel(element);
+                    buildSelectDayWeatherPanel(element);
+                }
+            });  
+        });
+
+        function changeForecastWeatherForSelectedCity() {
+
+            while (mainWeatherPanel.hasChildNodes()) {
+                mainWeatherPanel.removeChild(mainWeatherPanel.firstChild);
+            }
+
+            while (selectDayWeather.hasChildNodes()) {
+                selectDayWeather.removeChild(selectDayWeather.firstChild);
+            }
+        }
 
         async function getUserGeolocation() {
 
@@ -327,6 +560,7 @@
 
             buildDayWeatherPanel(userLocationWeather);
             buildNextDaysWeatherPanel(userLocationWeather);
+            buildSelectDayWeatherPanel(userLocationWeather);
         }
 
         async function getCitiesWeather() {
@@ -335,12 +569,11 @@
                 
                 var cityWeather = await getWeatherByLocation(cities[index].woeid);
 
+                buildCitiesWeatherPanel(cityWeather)
                 citiesWeather.push(cityWeather);
             }
-
-            console.log(citiesWeather);
-            console.log(userLocationWeather);
         }
+
 
         async function getWeatherByLocation(woeid) {
 
@@ -351,7 +584,88 @@
             return response;
         }
 
+        function buildSelectDayWeatherPanel(object) {
+            
+            var nextDaysForecast = object.results.forecast
+
+            nextDaysForecast.forEach(element => {
+
+                var dayWeather = document.createElement('div');
+                dayWeather.className = "clSelectDayWeather";
+                
+                var day = document.createElement('p');
+                day.className = "clSelectDay";
+                day.innerHTML = element.weekday;
+
+                var date = document.createElement('p');
+                date.className = "clSelectDate";
+                date.innerHTML = element.date;
+
+                var condition = getWeatherImage(element.condition, "selectDays");
+
+                var min = document.createElement('p');
+                min.className = "clSelectMin";
+                min.innerHTML = element.min + "º";
+
+                var max = document.createElement('p');
+                max.className = "clSelectMax";
+                max.innerHTML = element.max + "º";
+
+                dayWeather.appendChild(day);
+                dayWeather.appendChild(date);
+                dayWeather.appendChild(condition);
+                dayWeather.appendChild(min);
+                dayWeather.appendChild(max);
+
+                selectDayWeather.appendChild(dayWeather);
+
+            });
+
+        }
+
+        function buildCitiesWeatherPanel(object) {
+
+            var city = document.createElement('div');
+            city.className = "clCityWeather";
+            city.id = object.results.city_name;
+
+            var temperature = document.createElement('h3');
+            temperature.innerHTML = object.results.temp + "º";
+
+            var imgCondition = getWeatherImage(object.results.condition_slug, "citiesWeather");
+
+            var imgHumidity = document.createElement('img');
+            imgHumidity.src = "images/humidade.svg";
+            imgHumidity.alt = "Imagem de gotas que representam a humidade do dia";
+
+            var humidity = document.createElement("p");
+            humidity.innerHTML = object.results.humidity + "%";
+
+            var imgWind = document.createElement('img');
+            imgWind.src = "images/vento.svg";
+            imgWind.alt = "Imagem de vento que representa a velocidade do vento no dia";
+
+            var wind = document.createElement("p");
+            wind.innerHTML = object.results.wind_speedy;
+
+            var cityName = document.createElement('h2');
+            cityName.innerHTML = object.results.city;
+
+            city.appendChild(temperature);
+            city.appendChild(imgCondition);
+            city.appendChild(imgHumidity);
+            city.appendChild(humidity);
+            city.appendChild(imgWind);
+            city.appendChild(wind);
+            city.appendChild(cityName);
+
+            citiesInfoPanel.appendChild(city);
+        }
+
         function buildDayWeatherPanel(object) {
+
+            var cityNameTitle = document.createElement('div');
+            cityNameTitle.id = "idCityNameTitle";
 
             var cityName = document.createElement('h1');
             cityName.id = "idCityName";
@@ -371,7 +685,7 @@
             temperature.id = "idTemperature";
             temperature.innerHTML = object.results.temp + "º";
 
-            var imgWeatherCondition = getWeatherImage(object.results.condition_slug);
+            var imgWeatherCondition = getWeatherImage(object.results.condition_slug, "dayWeather");
 
             var secondaryInfo = ["umidade", "vento"];
 
@@ -423,15 +737,15 @@
             dayWeather.appendChild(update);
             dayWeather.appendChild(mainInfo);
             
-            mainWeatherPanel.appendChild(cityName);
-            mainWeatherPanel.appendChild(dayWeather);
+            cityNameTitle.appendChild(cityName);
 
+            mainWeatherPanel.appendChild(cityNameTitle);
+            mainWeatherPanel.appendChild(dayWeather);
         }
 
         function buildNextDaysWeatherPanel(object) {
 
             var nextDaysForecast = object.results.forecast
-            console.log(nextDaysForecast);
 
             nextDaysForecast.forEach(element => {
 
@@ -447,7 +761,7 @@
                 var minMax = document.createElement('h1');
                 minMax.innerHTML = element.max + "º " + element.min + "º";
 
-                var imgWeatherCondition = getWeatherImage(element.condition, 1);
+                var imgWeatherCondition = getWeatherImage(element.condition, "nextDays");
 
                 nextDay.appendChild(title);
                 nextDay.appendChild(day);
@@ -482,11 +796,19 @@
 
         function getWeatherImage(condition, option) {
 
-            if (option == 1) {
+            if (option == "nextDays") {
                 var img = document.createElement('img');
-                img.className = "clWheaterImage"
+                img.className = "clNextDaysWheaterImage"
                 img.alt = "Imagem da condição climática do dia selecionado";
-            } else {
+            } else if (option == "citiesWeather" ){
+                var img = document.createElement('img');
+                img.className = "clCitiesWeatherImage"
+                img.alt = "Imagem da condição climática do dia selecionado";
+            } else if (option == "selectDays") {
+                var img = document.createElement('img');
+                img.className = "clSelectDayWeatherImage"
+                img.alt = "Imagem da condição climática do dia selecionado";
+            } else if (option == "dayWeather"){
                 var img = document.createElement('img');
                 img.id = "idWheaterImage"
                 img.alt = "Imagem da condição climática do dia selecionado";
