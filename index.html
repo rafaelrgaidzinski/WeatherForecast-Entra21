@@ -41,7 +41,7 @@
             grid-template-rows: 1;
             width: 100%;
             height: 100%;
-            background-color: #26264a;
+            background-color: #141a1e;
         }
 
         #idCitiesSectionTitle h1 {
@@ -61,6 +61,10 @@
             grid-row: 2;
         }
 
+        #idCitiesInfo a {
+            text-decoration: none;
+        }
+
         .clCityWeather {
             display:grid;
             grid-template-columns: repeat(7, auto);
@@ -68,8 +72,16 @@
             align-self: center;
             height: 6em;
             padding: 0 10px;
-            background-color: #3b5998;
             color: #ffffff;
+            cursor: pointer;
+        }
+
+        .clCityWeather:nth-child(even) {
+            background-color: #2f3f48;
+        }
+        
+        .clCityWeather:nth-child(odd) {
+            background-color: #27343c;
         }
 
         .clCityWeather h3 {
@@ -394,9 +406,13 @@
         }
 
         #idSelectDay {
-            grid-column: 1;
-            grid-row: 1;
-            margin-top: 80px;
+            position: fixed;
+            width: calc(10% + 20px);
+            top: 80px;
+            right: -20px;
+            height: calc(100% - 80px);
+            overflow: auto;
+            background-color: #3083b6;
         }
 
         .clSelectDayWeather {
